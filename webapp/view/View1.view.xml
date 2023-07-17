@@ -1,0 +1,83 @@
+<mvc:View controllerName="territory1.northwindterritoryproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}" titleAlignment="Center">
+        <content>
+
+        <Dialog id="idDialog">
+        <VBox alignContent="Center" alignItems="Center">
+                <Label text="Region ID" labelFor="RegionID"  />
+                <Input id="rId" width="60%" />
+        </VBox>
+                 <HBox justifyContent="End" alignItems="Start">
+                    <Button type="Transparent" text="ok" press="okpress" />
+                    <Button type="Transparent" text="cancel" press="cancelpress" />
+                </HBox>
+            </Dialog>
+
+
+       <VBox alignContent="End" alignItems="End" >
+         <SearchField width="80%" search="onFilterSearch" />
+        </VBox>
+            <FlexBox>
+                <Table id="Tab" headerText="Orders Table:-" inset="true" items="{model1>/results}" sticky="ColumnHeaders,HeaderToolbar" alternateRowColors="true">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Territory Table:" />
+                            <ToolbarSpacer />
+                            <!-- <SearchField width="15%" placeholder="TerritoryID" search="onFilterSearchTID" />
+                            <SearchField width="15%" placeholder= "TDesc" search="onFilterSearchTDesc" />
+                            <SearchField width="15%" placeholder= "RegionID" search="onFilterSearchRID" /> -->
+                            <!-- <SearchField width="30%" search="onFilterSearch" /> -->
+
+                            <Label text="Region ID" labelFor="RegionID" />
+                            <Input id="regionId" width="20%" showSuggestion="true" showValueHelp="true" textFormatMode="KeyValue" valueHelpRequest="onLoadDialog" />
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="TerritoryID" />
+                        </Column>
+
+                        <Column>
+                            <Text text="TerritoryDescription" />
+                        </Column>
+
+                        <Column>
+                            <Text text="RegionID" />
+                        </Column>
+
+                        <!-- <Column>
+                            <Text text="Action" />
+                        </Column> -->
+                    </columns>
+
+                    <items>
+                        <ColumnListItem id="col1">
+                            <cells>
+                                <Text id="txt1" text="{model1>TerritoryID}" />
+                                <Text id="txt2" text="{model1>TerritoryDescription}" />
+                                <Text id="txt3" text="{model1>RegionID}" />
+                                <!-- <Input value="{model1>RegionID}" id="ID" editable="true" /> -->
+
+                                <!-- <HBox justifyContent="End" width="10rem">
+                                    <Button icon="sap-icon://edit" text="Edit" press="handleEditStatement" />
+                                    <Button icon="sap-icon://delete" text="Delete" type="Reject" press="handleDeleteStatement" />
+                                </HBox> -->
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </FlexBox>
+        </content>
+         <footer>
+        
+            <Bar design="Footer">
+                <contentRight>
+                <Button text="Pre" press="onPressPre"  type="Emphasized" id = "btn_previous" /> 
+                     <Button text="Next" press="onPressNext"  type="Emphasized" id = "btn_next" /> 
+                    <!-- <Text text=" Check your all order details here!!!" /> -->
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>
